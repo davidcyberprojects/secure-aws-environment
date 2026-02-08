@@ -42,7 +42,20 @@ The environment is built around a small set of core security principles:
 
 These principles guide all design and implementation decisions throughout the project. 
 
+## IAM Design 
 
+Access to the AWS account is tightly controlled using IAM Roles and Multi-Factor authentication (MFA).
+The root account is secured with MFA and is not used for day-to-day operations. 
+
+### IAM Roles 
+
+The following roles are defined to enforce the separation of responsibilities:
+
+- **AdminRole** - Full administrative access used only for environment setup and maintenance.
+- **ReadOnlyRole** - View-only access intended for auditing and inspection.
+- **EC2Role** - Limited permissions required by EC2 Instances to interact with AWS Services without using access keys.
+
+Direct IAM user permissions are avoided in favor of role-based access where possible. 
 
 
 
