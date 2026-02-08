@@ -1,15 +1,20 @@
 # Secure AWS Environment 🔐
+
 This project demonstrates how to design and deploy a secure AWS environment in line with security best practices. 
+
 The focus is on access control, network isolation, logging, and cost management.
 
 ## Project Scope 
+
 This project focuses on securing a basic AWS environment and does not include application development, CI/CD Pipelines, or production workloads. 
 
 ## Threat Model 
+
 By default, AWS accounts are vulnerable to misconfiguration rather than platform-level flaws.
 This project focuses on reducing the most common risks in small AWS environments 
 
 ### Key Risks Addressed 
+
 - **Excessive IAM Permissions** - Overly broad permissions can lead to accidental or malicious changes.
 - **Public Network Exposure** - Resources exposed directly to the internet can increase the attack surface.
 - **publicly Accessible Storage** - Misconfigured S3 buckets can lead to data exposure.
@@ -17,7 +22,27 @@ This project focuses on reducing the most common risks in small AWS environments
 - **Uncontrolled Costs** - Forgotten resources can generate unexpected charges. 
 
 ## Architecture Overview 
+
 The environment is designed with a security-first approach that prioritizes isolation and minimal exposure.
+
 Resources are deployed within a dedicated Virtual Private Cloud (VPC) using both public and private subnets. 
 Compute resources are placed in private subnets without public IP addresses to reduce exposure to the internet. 
+
 A small public subnet is reserved only for controlled access and required AWS-managed services. 
+
+## Security Principles & Controls 
+
+The environment is built around a small set of core security principles:
+
+- **Least Privileged Access** - IAM permissions are scoped to only what is required for each role.
+- **Reduced Attack Surface** - Compute resources are placed in private networks without public exposure.
+- **Secure By Default Configurations** - Encryption and public access blocking are enabled where available.
+- **Visibility and Auditability** - All account activity is logged to support detection and investigation.
+- **Cost Awareness** - Resource usage is monitored to prevent unexpected charges
+
+These principles guide all design and implementation decisions throughout the project. 
+
+
+
+
+
