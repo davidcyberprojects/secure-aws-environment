@@ -1,4 +1,4 @@
-# Secure AWS Environment
+# Secure AWS Environment 🔐
 This project demonstrates how to design and deploy a secure AWS environment in line with security best practices. 
 The focus is on access control, network isolation, logging, and cost management.
 
@@ -15,3 +15,9 @@ This project focuses on reducing the most common risks in small AWS environments
 - **publicly Accessible Storage** - Misconfigured S3 buckets can lead to data exposure.
 - **Lack of Visibility** - Without logging and monitoring, security incidents can go undetected.
 - **Uncontrolled Costs** - Forgotten resources can generate unexpected charges. 
+
+## Architecture Overview 
+The environment is designed with a security-first approach that prioritizes isolation and minimal exposure.
+Resources are deployed within a dedicated Virtual Private Cloud (VPC) using both public and private subnets. 
+Compute resources are placed in private subnets without public IP addresses to reduce exposure to the internet. 
+A small public subnet is reserved only for controlled access and required AWS-managed services. 
