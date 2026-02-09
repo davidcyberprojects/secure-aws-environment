@@ -141,3 +141,12 @@ Cost management is treated as a security and operational concern.
 - Resource usage is kept minimal, and components are shut down or removed when not in use.
 
 These constraints ensure the environment remains safe, predictable, and affordable.
+
+## AWS Account Setup
+
+- Root account is secured with Multi-Factor Authentication (MFA), and all access keys are removed.
+- Day-to-day operations are performed using an existing Admin IAM user with AdministratorAccess policy.
+- MFA is also enabled on the Admin IAM user to provide an extra layer of protection.
+- All administrative actions are logged for auditability.
+
+> Note: This project uses the existing IAM user for demonstration purposes, reflecting real-world account management practices.
