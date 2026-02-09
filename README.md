@@ -57,5 +57,28 @@ The following roles are defined to enforce the separation of responsibilities:
 
 Direct IAM user permissions are avoided in favor of role-based access where possible. 
 
+## Network Design 
+
+The environment uses a dedicated Virtual Private Cloud (VPC) to isolate resources from other networks. 
+
+### Subnet Strategy 
+
+- **Public Subnet**
+  - Used only for controlled access and required AWS-managed services.
+  - No application workloads are deployed here.
+
+- **Private Subnet**
+  - Hosts compute resources such as EC2 Instances.
+  - Instances do not have public IP addresses and are not directly accessible from the internet.
+ 
+### Network Exposure Controls 
+
+- Security groups restrict inbound traffic to only what is explicitly required.
+- SSH access is limited to a known IP address when enabled.
+- Unnecessary inbound ports are blocked by default.
+
+This design reduces the attack surface while still allowing administrative access when needed. 
+
+
 
 
