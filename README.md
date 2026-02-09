@@ -125,3 +125,19 @@ The following services are used to record account activity and detect abnormal b
 
 These controls provide auditability and support basic incident detection.
 
+## Cost Controls and Constraints
+
+Cost management is treated as a security and operational concern.
+
+### Cost Control Measures
+
+- An AWS budget is configured with a low monthly limit to prevent unexpected charges.
+- Email alerts are enabled to notify when spending approaches the defined threshold.
+- Services with high baseline costs, such as NAT Gateways, are intentionally avoided for this project.
+
+### Project Constraints
+
+- The environment is designed for learning and demonstration purposes, not production workloads.
+- Resource usage is kept minimal, and components are shut down or removed when not in use.
+
+These constraints ensure the environment remains safe, predictable, and affordable.
