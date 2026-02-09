@@ -95,5 +95,17 @@ Instances are configured without public IP addresses to prevent direct internet 
 Administrative access to EC2 instances is performed using AWS Systems Manager Session Manager.
 This approach avoids opening inbound SSH ports and provides audit logging of access sessions.
 
+## Secure Storage Design
+
+Amazon S3 is used for object storage with a strong emphasis on preventing accidental public exposure.
+
+### Storage Security Controls
+
+- All S3 buckets block public access at the account and bucket level.
+- Server-side encryption is enabled to protect data at rest.
+- Bucket versioning is enabled to protect against accidental deletion or overwrite.
+- Access to S3 objects is restricted using IAM policies and roles.
+
+These controls ensure stored data remains private and auditable.
 
 
