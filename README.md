@@ -108,4 +108,20 @@ Amazon S3 is used for object storage with a strong emphasis on preventing accide
 
 These controls ensure stored data remains private and auditable.
 
+## Logging and Monitoring
+
+Visibility is a core requirement for maintaining a secure AWS environment. 
+The following services are used to record account activity and detect abnormal behavior.
+
+### Logging Controls
+
+- AWS CloudTrail is enabled to log all management API activity across the account.
+- Logs are retained for a limited period to balance visibility and cost.
+
+### Monitoring and Alerts
+
+- CloudWatch is used to monitor key security-related events.
+- Alerts are configured for sensitive actions such as root account usage and unauthorized API calls.
+
+These controls provide auditability and support basic incident detection.
 
