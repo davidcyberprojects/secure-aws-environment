@@ -2,6 +2,8 @@
 
 Access to the AWS account is secured using IAM roles instead of long-lived credentials. Roles are separated by responsibility to enforce least-privilege access and reduce blast radius.
 
+Sensitive identifiers have been redacted in screenshots to follow security best practices.
+
 ### AdminRole
 - Provides full administrative access for environment setup and maintenance.
 - Intended for human users only.
