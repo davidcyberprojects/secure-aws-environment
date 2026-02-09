@@ -79,6 +79,21 @@ The environment uses a dedicated Virtual Private Cloud (VPC) to isolate resource
 
 This design reduces the attack surface while still allowing administrative access when needed. 
 
+## Compute and Secure Access Design
+
+Compute resources are deployed using Amazon EC2 instances placed in private subnets. 
+Instances are configured without public IP addresses to prevent direct internet access.
+
+### Instance Security Controls
+
+- EC2 instances use IAM roles to access AWS services instead of long-lived access keys.
+- Root storage volumes are encrypted to protect data at rest.
+- Instance metadata service version 2 (IMDSv2) is enforced to reduce credential exposure.
+
+### Administrative Access
+
+Administrative access to EC2 instances is performed using AWS Systems Manager Session Manager.
+This approach avoids opening inbound SSH ports and provides audit logging of access sessions.
 
 
 
