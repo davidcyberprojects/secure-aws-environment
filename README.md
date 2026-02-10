@@ -79,6 +79,8 @@ The environment uses a dedicated Virtual Private Cloud (VPC) to isolate resource
 
 This design reduces the attack surface while still allowing administrative access when needed. 
 
+Detailed network design is documented in `docs/network.md`.
+
 ## Compute and Secure Access Design
 
 Compute resources are deployed using Amazon EC2 instances placed in private subnets. 
