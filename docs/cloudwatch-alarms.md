@@ -54,7 +54,7 @@ Detects failed API calls due to insufficient permissions (AccessDenied or Unauth
 { ($.errorCode = "*UnauthorizedOperation") || ($.errorCode = "AccessDenied*") }
 ```
 
-**Threshold:** >= 5 events in 5 minutes
+**Threshold:** >= 1 event in 5 minutes
 
 **Why It Matters:**  
 Multiple unauthorized API calls may indicate:
@@ -222,6 +222,23 @@ aws ec2 revoke-security-group-ingress \
   --port 22 \
   --cidr 10.0.0.0/8
 ```
+
+---
+
+## Alarm Testing Results
+
+**Date:** Febuary 11th, 2026
+
+**Alarm Triggered:** UnauthorizedAPICallsAlarm
+
+**Cause:** Testing AWS CLI commands from EC2 instance without sufficient IAM permissions
+
+**Resolution:** Verified events were from authorized testing activity. Alarm functioned as expected.
+
+**Lessons Learned:**
+- Alarms are sensitive and working correctly
+- EC2Role requires additional permissions if STS calls are needed
+- Consider adjusting threshold if frequent testing generates false positives
 
 ---
 
